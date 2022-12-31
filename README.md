@@ -23,7 +23,7 @@
         <li><a href="#steps">Installation and Configuration of Nginx Server on Private EC2 Instances</a></li>
         <li><a href="#steps">Creating Target Group</a></li>
         <li><a href="#steps">Creating Application Load Balancer</a></li>
-        <li><a href="#steps">Creating Application Load Balancer</a></li>
+        <li><a href="#steps">Configuring ABL Security Group</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contacts</a></li>
@@ -111,7 +111,7 @@ Write the name of your instances, select the number of instances and your choice
 
 Select your key-pair if you dont have a key-pair create one
 
-Next, select the VPC that you previously created, and choose any of the private subnet, Disable the Auto-Assigned Public IP,  and finally Create a Security Group keeping the default settings then click on Launch Instance.
+Next, select the VPC that you previously created, and choose any of the private subnet, Disable the Auto-Assigned Public IP, and finally Create a Security Group keeping the default settings then click on Launch Instance.
 
 ![s1](/images/e3.png)
 
@@ -130,7 +130,3 @@ Select your key-pair
 ![s1](/images/bastion2.png)
 
 Next, select the VPC that you previously created, and choose any of the public subnet, Enable the Auto-Assigned Public IP, and finally choose a Security Group keeping the default settings then click on Launch Instance.
-
-
-
-

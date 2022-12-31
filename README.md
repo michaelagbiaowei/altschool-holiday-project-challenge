@@ -59,7 +59,7 @@ A VPC is an Isolated Private Cloud within a Public Cloud.
 
 - Work on building a personal portfolio and CV (Check out resumeworded.com).
 
-## Important points to not
+## Important points to note
 
 - I should not be able to access your web servers through their respective IP addresses. Access must be only via the load balancer
 

@@ -20,6 +20,7 @@
         <li><a href="#steps">Creating VPC</a></li>
         <li><a href="#steps">Create a Private EC2 Instance</a></li>
         <li><a href="#steps"> Create a Bastion Host</a></li>
+        <li><a href="#steps">SSH Connections</a></li>
         <li><a href="#steps">Installation and Configuration of Nginx Server on Private EC2 Instances</a></li>
         <li><a href="#steps">Creating Target Group</a></li>
         <li><a href="#steps">Creating Application Load Balancer</a></li>
@@ -127,6 +128,28 @@ Write the name of your instance, and your choice of Amazon Machine Image.
 
 Select your key-pair
 
+Next, select the VPC that you previously created, and choose any of the public subnet, Enable the Auto-Assigned Public IP, and finally choose a Security Group keeping the default settings then click on Launch Instance.
+
 ![s1](/images/bastion2.png)
 
-Next, select the VPC that you previously created, and choose any of the public subnet, Enable the Auto-Assigned Public IP, and finally choose a Security Group keeping the default settings then click on Launch Instance.
+## **SSH Connections**
+
+Select on the Bastion Host Instance and click on connect which will launch a Dashboard.
+![s1](/images/connect1.png)
+
+select SSH client and follow the instructions on how to connect.
+
+![s1](/images/connect2.png)
+
+Access the bastion host via SSH. Copy the keypair you downloaded to the bastion host server. Then, run chmod 400 yourkeypairname.pem
+
+![s1](/images/connect3.png)
+
+Below is an Example of SSH key-pair that has been copied into the Bastion Host server
+
+![s1](/images/connect6.png)
+
+![s1](/images/connect7.png)
+
+
+

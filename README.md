@@ -159,14 +159,14 @@ Run chmod 400 yourkeypairname.pem, then access the Private Server via SSH from t
 ![s1](/images/connect7.png)
 
 ## **5. >Installation and Configuration of Nginx Server on Private EC2 Instances**
- 
- Using the following commands; update and install Nginx and login to the root user to setup static webpage.
+
+Using the following commands; update and install Nginx and login to the root user to setup static webpage.
 
     $ sudo apt update; sudo apt install nginx -y; sudo su
 
 ![s1](/images/connect8.png)
 
- From the root user, run the following commands to display the hostname of your server;
+From the root user, run the following commands to display the hostname of your server;
 
     # echo "<h1>This is my server2 $(hostname -f)</h1>" > /var/www/html/index.nginx-debian.hmtl
 
@@ -228,7 +228,7 @@ Give your Security Group a name, brief description and ensure you choose your cr
 
 Edit the Inbound rules to allow Http and Https traffic from anywhere and leave Outbound rules on default. Then click on create and return to the previous page to assign the newly created Security Group.
 
-On the **Listeners and routing section**, select the target group previously created, leaving the rest of the configuration on default and finally click on create load balancers. 
+On the **Listeners and routing section**, select the target group previously created, leaving the rest of the configuration on default and finally click on create load balancers.
 
 **NOTE:** The Load Balancers takes awhile to provision.
 
@@ -246,6 +246,12 @@ Edit the inbound rules to allow traffic on only the load balancer by selecting t
 
 Confirm the health status of your target groups, if it is unhealthy, re-start the nginx server and refresh the target groups page
 
-    sudo systemctl restart nginx
+    $ sudo systemctl restart nginx
 
 ![s1](/images/health.png)
+
+Now to check whether things are working properly let's test our Load Balancer Distribution. We will copy the Distribution domain name and enter it into our browser.
+
+![s1](/images/ip1.png)
+
+![s1](/images/ip2.png)

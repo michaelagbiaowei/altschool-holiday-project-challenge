@@ -10,7 +10,7 @@
       <a href="#about-the-project">Project Overview</a>
       <ul>
        <li><a href="#prerequisites">What is Load Balancing</a></li>
-        <li><a href="#prerequisites">Application Load Balancer overview</a></li>
+        <li><a href="#prerequisites">Application Load Balancer Overview</a></li>
         <li><a href="#built-with">Virtual Private Cloud</a></li>
         <li><a href="#built-with">VWhat is Network Address Translation(Nat) Gateway?</a></li>
       </ul>

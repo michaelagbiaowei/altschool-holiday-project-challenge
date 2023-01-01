@@ -39,7 +39,7 @@
 
 This is a way of distributing incoming traffic efficiently across multiple servers.
 
-## Application Load Balancer overview
+## Application Load Balancer Overview
 
 Application Load Balancer Routes incoming Client HTTP/HTTPS traffic across multiple servers
 

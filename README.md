@@ -255,3 +255,15 @@ Now to check whether things are working properly let's test our Load Balancer Di
 ![s1](/images/ip1.png)
 
 ![s1](/images/ip2.png)
+
+## 🔗 Contacts
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maiempire/)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/2348089440108)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/michaelagbiaow2)
+
+## Acknowledgments
+
+- [Amazon S3 Access Control - IAM Policies, Bucket Policies and ACLs](https://www.youtube.com/watch?v=xFzJw6wJ8eY)
+- [Udacity Cloud DevOps Nanodegree Program](udacity.com)
+- [ALX Africa](https://www.alxafrica.com/)

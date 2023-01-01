@@ -25,7 +25,7 @@
         <li><a href="#steps">Installation and Configuration of Nginx Server on Private EC2 Instances</a></li>
         <li><a href="#steps">Creating Target Group</a></li>
         <li><a href="#steps">Creating Application Load Balancer</a></li>
-        <li><a href="#steps">Configuring ABL Security Group</a></li>
+        <li><a href="#steps">Configuring Application Load Balancer Security Group</a></li>
       </ul>
     </li>
     <li><a href="#contact">Contacts</a></li>
@@ -230,9 +230,22 @@ Edit the Inbound rules to allow Http and Https traffic from anywhere and leave O
 
 On the **Listeners and routing section**, select the target group previously created, leaving the rest of the configuration on default and finally click on create load balancers. 
 
-**NOTE:** The Load Balancers takes awhile to provision. 
+**NOTE:** The Load Balancers takes awhile to provision.
 
 ![s1](/images/load5.png)
 
+## **Configuring Application Load Balancer Security Group**
 
+Navigate to your Security Group and select the security group. that is associated with your instances
 
+![s1](/images/s1.png)
+
+Edit the inbound rules to allow traffic on only the load balancer by selecting the Security Group that is associated with the load balancer. Then save the rules.
+
+![s1](/images/s2.png)
+
+Confirm the health status of your target groups, if it is unhealthy, re-start the nginx server and refresh the target groups page
+
+    sudo systemctl restart nginx
+
+![s1](/images/health.png)

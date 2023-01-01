@@ -12,6 +12,7 @@
        <li><a href="#prerequisites">What is Load Balancing</a></li>
         <li><a href="#prerequisites">Application Load Balancer overview</a></li>
         <li><a href="#built-with">Virtual Private Cloud</a></li>
+        <li><a href="#built-with">VWhat is Network Address Translation(Nat) Gateway?</a></li>
       </ul>
     </li>
     <li>
@@ -45,6 +46,10 @@ Application Load Balancer Routes incoming Client HTTP/HTTPS traffic across multi
 ## Virtual Private Cloud (VPC)
 
 A VPC is an Isolated Private Cloud within a Public Cloud.
+
+## What is Network Address Translation(Nat) Gateway?
+
+This is a service that enables instances in a private subnet to access the internet but prevents the internet to directly connect to the instances. Simply put, it means the IP address of your computer is not seen on the Internet when you connect to web pages, etc.
 
 ## TASK
 
@@ -106,7 +111,7 @@ Navigate to the ec2 console and click on Launch Instance
 
 ![s1](/images/e1.png)
 
-Write the name of your instances, select the number of instances and your choice of Amazon Machine Image.
+Write the name of your instances, select the number of instances and using Ubuntu as our choice of Linux Distro.
 
 ![s1](/images/e2.png)
 
@@ -116,13 +121,13 @@ Next, select the VPC that you previously created, and choose any of the private 
 
 ![s1](/images/e3.png)
 
-## **Create a Bastion Host**
+## **3. Create a Bastion Host**
 
 A bastion host is a server whose purpose is to provide access to a private network from an external network. This is necessary because our subnets are private, hence, the bastion host which is within the same VPC serves as a bridge to establibish connection to the private subnets. The best practice is that anyone who needs access to any of the computers inside the VPC must SSH into the bastion host first before doing another SSH to the instance they want to go to.
 
 Navigate to the ec2 console and click on Launch Instance
 
-Write the name of your instance, and your choice of Amazon Machine Image.
+Write the name of your instance, and using Ubuntu as our choice of Linux Distro.
 
 ![s1](/images/bastion1.png)
 
@@ -132,7 +137,7 @@ Next, select the VPC that you previously created, and choose any of the public s
 
 ![s1](/images/bastion2.png)
 
-## **SSH Connections**
+## **4. SSH Connections**
 
 Select on the Bastion Host Instance and click on connect which will launch a Dashboard.
 ![s1](/images/connect1.png)
@@ -149,7 +154,85 @@ Below is an Example of SSH key-pair that has been copied into the Bastion Host s
 
 ![s1](/images/connect6.png)
 
+Run chmod 400 yourkeypairname.pem, then access the Private Server via SSH from the Bastion host.
+
 ![s1](/images/connect7.png)
+
+## **5. >Installation and Configuration of Nginx Server on Private EC2 Instances**
+ 
+ Using the following commands; update and install Nginx and login to the root user to setup static webpage.
+
+    $ sudo apt update; sudo apt install nginx -y; sudo su
+
+![s1](/images/connect8.png)
+
+ From the root user, run the following commands to display the hostname of your server;
+
+    # echo "<h1>This is my server2 $(hostname -f)</h1>" > /var/www/html/index.nginx-debian.hmtl
+
+Then cat your file to confirm that host is being displayed using;
+
+    # cat /var/www/html/index.nginx-debian.html
+
+Exit the root user and then enable, start, and confirm status of nginx server using the following commands
+
+    $ sudo systemctl enable nginx; sudo systemctl start nginx; sudo systemctl status nginx
+
+![s1](/images/connect9.png)
+
+Exit from the first Private server and from your Bastion host ssh into your second server and repeat whole process to update and install nginx, login to root user and echo your hostname, cat file to confirm hostname is being displayed, exit root user, and then enable, start, and confirm status of the nginx server.
+
+## **6. Creating Target Group**
+
+Navigate to Target Group and click on create Target Group
+
+![s1](/images/target1.png)
+
+Choose instances as your target type and give your target group a name.
+
+![s1](/images/target2.png)
+
+Select the VPC you have already created on the drop down menu and leave the default protocol on Http1.
+
+![s1](/images/target3.png)
+
+Click on next
+
+![s1](/images/target4.png)
+
+Then select the Private instances in your VPC and click on the include as pending.
+
+![s1](/images/target5.png)
+
+Currently there is no load balancer configured to this target group. Click on the None associated and select the new load balancer.
+
+![s1](/images/target6.png)
+
+## **7. Creating Application Load Balancer**
+
+Give your Application Load Balancer a name and leave the Scheme and IP address type on default.
+
+![s1](/images/load1.png)
+
+Then on Network Mapping select your VPC and choose your public subnets associated with your VPC.
+
+![s1](/images/load2.png)
+
+For the Security Groups click on create new security group
+
+![s1](/images/load3.png)
+
+Give your Security Group a name, brief description and ensure you choose your created VPC from the drop down menu.
+
+![s1](/images/load4.png)
+
+Edit the Inbound rules to allow Http and Https traffic from anywhere and leave Outbound rules on default. Then click on create and return to the previous page to assign the newly created Security Group.
+
+On the **Listeners and routing section**, select the target group previously created, leaving the rest of the configuration on default and finally click on create load balancers. 
+
+**NOTE:** The Load Balancers takes awhile to provision. 
+
+![s1](/images/load5.png)
 
 
 

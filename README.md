@@ -111,7 +111,7 @@ Navigate to the ec2 console and click on Launch Instance
 
 ![s1](/images/e1.png)
 
-Write the name of your instances, select the number of instances and using Ubuntu as our choice of Linux Distro.
+Write the name of your instances, select the number of instances and use Ubuntu as choice of Linux Distro.
 
 ![s1](/images/e2.png)
 
@@ -127,7 +127,7 @@ A bastion host is a server whose purpose is to provide access to a private netwo
 
 Navigate to the ec2 console and click on Launch Instance
 
-Write the name of your instance, and using Ubuntu as our choice of Linux Distro.
+Write the name of your instance, and use Ubuntu as the choice of Linux Distro.
 
 ![s1](/images/bastion1.png)
 
@@ -142,7 +142,7 @@ Next, select the VPC that you previously created, and choose any of the public s
 Select on the Bastion Host Instance and click on connect which will launch a Dashboard.
 ![s1](/images/connect1.png)
 
-select SSH client and follow the instructions on how to connect.
+Select SSH client and follow the instructions on how to connect.
 
 ![s1](/images/connect2.png)
 
@@ -158,7 +158,7 @@ Run chmod 400 yourkeypairname.pem, then access the Private Server via SSH from t
 
 ![s1](/images/connect7.png)
 
-## **5. >Installation and Configuration of Nginx Server on Private EC2 Instances**
+## **5. Installation and Configuration of Nginx Server on Private EC2 Instances**
 
 Using the following commands; update and install Nginx and login to the root user to setup static webpage.
 
@@ -168,7 +168,7 @@ Using the following commands; update and install Nginx and login to the root use
 
 From the root user, run the following commands to display the hostname of your server;
 
-    # echo "<h1>This is my server2 $(hostname -f)</h1>" > /var/www/html/index.nginx-debian.hmtl
+    # echo "<h1>This is my server2 $(hostname -f)</h1>" > /var/www/html/index.nginx-debian.html
 
 Then cat your file to confirm that host is being displayed using;
 

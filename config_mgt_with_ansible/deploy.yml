@@ -1,0 +1,5 @@
+- name: INSTALL NGINX AND ECHO HOSTNAME
+  hosts: all
+  become: true
+  roles:
+    - nginx

@@ -1,0 +1,17 @@
+---
+# tasks file for nginx
+
+- name: update servers
+  command: apt update
+
+
+- name: install nginx
+  apt:
+    name: nginx 
+    state: present
+
+- name: echo hostname
+  shell: echo "<h1>servers hostname is $(hostname)</h1>" > "{{ path }}"
+
+- name: restart nginx
+  command: systemctl restart nginx

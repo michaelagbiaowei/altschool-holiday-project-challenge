@@ -81,7 +81,7 @@ This is a service that enables instances in a private subnet to access the inter
 
 ## **Getting Started**
 
-## **Step One:**
+## **Steps:**
 
 ## **1. Creating VPC**
 

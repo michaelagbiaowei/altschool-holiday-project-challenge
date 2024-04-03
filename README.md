@@ -63,11 +63,9 @@ This is a service that enables instances in a private subnet to access the inter
 
 - Make sure that each server displays its own Hostname or IP address. You can use any programming language of your choice to display this.
 
-- Work on building a personal portfolio and CV (Check out resumeworded.com).
-
 ## Important points to note
 
-- I should not be able to access your web servers through their respective IP addresses. Access must be only via the load balancer
+- Users should not be able to access your web servers through their respective IP addresses. Access must be only via the load balancer
 
 - You should define a logical network on the cloud for your servers.
 
@@ -75,9 +73,9 @@ This is a service that enables instances in a private subnet to access the inter
 
 - Your Instances should not be assigned public IP addresses.
 
-- You may or may not set up auto scaling(I advice you do for knowledge sake)
+- You may or may not set up auto-scaling(I advice you do for knowledge sake)
 
-- You must submit a custom domain name(from a domain provider e.g. Route53) or the ALB’ domain name.
+- You must submit a custom domain name(from a domain provider e.g. Route53) or the ALB’s domain name.
 
 ## **Getting Started**
 
